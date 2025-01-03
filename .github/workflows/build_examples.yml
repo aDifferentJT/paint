@@ -24,17 +24,14 @@ jobs:
           gleam deps download
           gleam run -m reference_this -- --allow-all-ext src/examples src/examples_code.gleam
           gleam run -m lustre/dev build app --minify
-      - name: Copy output to dist
-        run: |
           mkdir -p dist
           cp index.html dist/index.html
           cp -r priv dist/priv
-      - name: Update path in index.html to use minified app
-        run: sed -i 's|priv/static/app.mjs|priv/static/app.min.mjs|' dist/index.html
+          sed -i 's|priv/static/app.mjs|priv/static/app.min.mjs|' dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: "dist"
+          path: "/demo/dist"
 
   deploy:
     permissions:
