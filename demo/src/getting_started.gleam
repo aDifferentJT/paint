@@ -126,7 +126,7 @@ pub fn intro_text() -> Element(a) {
       text(
         ". You can learn more about this in the examples section further down this page. ",
       ),
-      text("But first, follow one of these short setup guide to get started:"),
+      text("But first, follow one of these short setup guides to get started:"),
     ]),
   ])
 }
