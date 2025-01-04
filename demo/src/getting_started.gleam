@@ -44,7 +44,7 @@ pub fn canvas_guide() -> Element(a) {
         ]),
         html.li([], [
           text(
-            "And you are done! Start file server and take a look at you HTML file. For instance:",
+            "And you are done! Start a file server and take a look at you HTML file. For instance:",
           ),
           utils.highlight("python3 -m http.server 3000", "python"),
         ]),
