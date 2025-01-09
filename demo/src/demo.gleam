@@ -254,9 +254,23 @@ fn interactive_demo() -> Element(a) {
   div([], [
     anchor("interactive-demo"),
     h1([], [text("Interactive demo")]),
-    text(
-      "TODO: I will try add a larger interactive app / game here with a link to a seperate GitHub repo",
-    ),
+    div([class("interactive-demo")], [
+      h3([], [text("Noughts and crosses")]),
+      html.a(
+        [
+          attribute.href(
+            "https://github.com/adelhult/paint-noughts-and-crosses",
+          ),
+        ],
+        [text("https://github.com/adelhult/paint-noughts-and-crosses")],
+      ),
+      html.iframe([
+        attribute.width(300),
+        attribute.height(300),
+        attribute.attribute("scrolling", "no"),
+        attribute.src("https://adelhult.github.io/paint-noughts-and-crosses/"),
+      ]),
+    ]),
   ])
 }
 

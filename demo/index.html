@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -20,6 +20,12 @@
 
             html {
                 scroll-behavior: smooth;
+            }
+
+            iframe {
+                overflow: hidden;
+                border: none;
+                max-width: 100%;
             }
 
             h1,
@@ -225,6 +231,16 @@
                 user-select: none;
             }
 
+            .interactive-demo {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .interactive-demo > h3 {
+                margin: 0;
+            }
+
             @media (max-width: 800px) {
                 .menu-container {
                     position: relative;
@@ -261,7 +277,8 @@
                 constructor() {
                     super();
                     this.pre = document.createElement("pre");
-                    const template = document.getElementById("highlight-styles");
+                    const template =
+                        document.getElementById("highlight-styles");
                     this.shadow = this.attachShadow({ mode: "open" });
                     this.shadow.appendChild(template.content.cloneNode(true));
                     this.shadow.appendChild(this.pre);
