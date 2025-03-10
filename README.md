@@ -38,15 +38,3 @@ Lucy is borrowed from the [Gleam branding page](https://gleam.run/branding/) and
 ## Changelog
 The API is considered unstable until a `1.*.*` release is published.
 Changes between versions can be found in the file `CHANGELOG.md`.
-
-## TODOs
-- [ ] Would be fun to investigate an API more similar to [Haskell diagrams](https://hackage.haskell.org/package/diagrams) and [Diagrammer](https://www.youtube.com/watch?v=gT9Xu-ctNqI).
-- [x] Replace the color functions with [gleam-community/colour](https://hexdocs.pm/gleam_community_colour/)
-- [ ] Support (bitmap) images
-- [x] Split the library into multiple well structured modules (`paint`, `canvas`, `event`, etc.)
-- [x] Allowing arbitrary css selectors instead of requiring ids in `interact_...` and `display_...`
-- [x] Improve input handling for `canvas.interact` (more keys and mouse input)
-- [ ] Add another backend? SVG or maybe Raylib bindings (for either erlang or node).
-- [ ] Write a proper tutorial (and a nicer examples page).
-- [ ] More shapes, ellipse for example
-- [ ] (Maybe) support gradient fill
