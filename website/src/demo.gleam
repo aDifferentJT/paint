@@ -262,7 +262,7 @@ fn interactive_demo() -> Element(a) {
             "https://github.com/adelhult/paint/tree/main/demos/noughts_and_crosses",
           ),
         ],
-        [text("Noughts and crosses")],
+        [text("Source code")],
       ),
       html.iframe([
         attribute.width(300),
