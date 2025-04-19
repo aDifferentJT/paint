@@ -259,16 +259,16 @@ fn interactive_demo() -> Element(a) {
       html.a(
         [
           attribute.href(
-            "https://github.com/adelhult/paint-noughts-and-crosses",
+            "https://github.com/adelhult/paint/tree/main/demos/noughts_and_crosses",
           ),
         ],
-        [text("https://github.com/adelhult/paint-noughts-and-crosses")],
+        [text("Noughts and crosses")],
       ),
       html.iframe([
         attribute.width(300),
         attribute.height(300),
         attribute.attribute("scrolling", "no"),
-        attribute.src("https://adelhult.github.io/paint-noughts-and-crosses/"),
+        attribute.src("https://adelhult.github.io/paint/noughts_and_crosses/"),
       ]),
     ]),
   ])
