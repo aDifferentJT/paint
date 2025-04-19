@@ -2,6 +2,12 @@ Visit the version [hosted online](https://adelhult.github.io/paint/).
 
 ## Developing
 
+Copy logo
+```sh
+mkdir -p ./priv/static
+cp ../media/logo.svg ./priv/static/logo.svg
+```
+
 Start Lustre dev server:
 ```sh
 gleam run -m lustre/dev start

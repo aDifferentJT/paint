@@ -275,12 +275,7 @@ fn interactive_demo() -> Element(a) {
 }
 
 fn logo() -> Element(a) {
-  html.img([
-    class("logo"),
-    attribute.src(
-      "https://raw.githubusercontent.com/adelhult/paint/refs/heads/main/media/logo.svg",
-    ),
-  ])
+  html.img([class("logo"), attribute.src("./priv/static/logo.svg")])
 }
 
 fn anchor(name: String) -> Element(a) {
