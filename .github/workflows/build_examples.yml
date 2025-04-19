@@ -21,9 +21,9 @@ jobs:
           gleam deps download
           gleam build
           mkdir -p dist
-          cp ./build/dev/javascript/noughts_and_crosses/noughts_and_crosses.mjs ./dist/noughts_and_crosses.mjs
+          cp -r ./build/dev/javascript ./dist/build
           cp ./index.html ./dist/index.html
-          sed -i 's|./build/dev/javascript/noughts_and_crosses/noughts_and_crosses.mjs|./noughts_and_crosses.mjs|' dist/index.html
+          sed -i 's|./build/dev/javascript/noughts_and_crosses/noughts_and_crosses.mjs|./build/noughts_and_crosses/noughts_and_crosses.mjs|' dist/index.html
       - name: Build website
         run: |
           cd website
