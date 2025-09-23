@@ -334,7 +334,7 @@ fn get_tick_func(ctx, view, update, selector) {
 ///  )
 ///}
 /// ```
-/// A more detailed example for using this API can be found in the "demos" directory.
+/// A more detailed example for using this API can be found in the `demos/with_lustre` directory.
 pub fn define_web_component() -> Nil {
   impl_canvas.define_web_component()
   // somewhat of an ugly hack, but the setter for the web component will need to call this
