@@ -145,7 +145,7 @@ fn display_on_rendering_context(
 }
 
 /// Animations, interactive applications and tiny games can be built using the
-/// `interact` function. It roughly follows the so-called [Elm architecture](https://guide.elm-lang.org/architecture/).
+/// `interact` function. It roughly follows the [Elm architecture](https://guide.elm-lang.org/architecture/).
 /// Here is a short example:
 /// ```
 /// type State =
