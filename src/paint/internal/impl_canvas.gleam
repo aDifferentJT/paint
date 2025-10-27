@@ -26,7 +26,7 @@ pub fn mouse_pos(ctx: RenderingContext2D, event: MouseEvent) -> #(Float, Float)
 @external(javascript, "./../../impl_canvas_bindings.mjs", "check_mouse_button")
 pub fn check_mouse_button(
   event: MouseEvent,
-  previous_event: MouseEvent,
+  previous_event: Result(MouseEvent, Nil),
   button_index: Int,
   check_pressed check_pressed: Bool,
 ) -> Bool

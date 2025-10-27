@@ -320,8 +320,7 @@ pub fn interact(
       fn(event: impl_canvas.MouseEvent) {
         // Read the previous state of the mouse
         let previous_event_id = "PAINT_PREVIOUS_MOUSE_INPUT_FOR_" <> selector
-        let assert Ok(previous_event) =
-          impl_canvas.get_global(previous_event_id)
+        let previous_event = impl_canvas.get_global(previous_event_id)
         // Save this state
         impl_canvas.set_global(event, previous_event_id)
 
