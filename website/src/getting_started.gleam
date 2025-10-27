@@ -9,7 +9,7 @@ fn guide(title: String, content: Element(a)) -> Element(a) {
 }
 
 pub fn canvas_guide() -> Element(a) {
-  // TODO: we should avoid doing this needless work every 
+  // TODO: we should avoid doing this needless work every
   // redraw (if we have any reactivity inside this function in the future)
   let references = utils.get_references_by_filename()
   let assert Ok(basic_gleam) = dict.get(references, "tutorial_basic.gleam")
@@ -94,7 +94,11 @@ pub fn canvas_guide() -> Element(a) {
           html.a([attribute.href("https://hexdocs.pm/lustre/")], [
             text("Lustre"),
           ]),
-          text(" to manage state and effects instead."),
+          text(" or "),
+          html.a([attribute.href("https://hexdocs.pm/tiramisu/")], [
+            text("Tiramisu"),
+          ]),
+          text(" to manage your state and effects."),
         ]),
       ]),
     ),
