@@ -1,3 +1,7 @@
+# 1.0.0
+- Addition: Add basic Image API
+- Breaking: Remove the `just` function
+
 # 0.4.0
 - Drop gleam_community_maths dependancy (Thanks, @graphiteisaac!)
 - Addition: Add `encode` module containing `to_string` and `from_string` functions.
