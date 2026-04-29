@@ -12,7 +12,7 @@ jobs:
       - uses: erlef/setup-beam@v1
         with:
           otp-version: "26.0.2"
-          gleam-version: "1.13.0"
+          gleam-version: "1.16.0"
           rebar3-version: "3"
           # elixir-version: "1.15.4"
       - name: Build noughts and crosses demo
@@ -32,11 +32,8 @@ jobs:
           sed -i 's|./priv/static/|./|' src/demo.gleam
           sed -i 's|./priv/static/|./|' src/examples/image_scaling.gleam
           sed -i 's|./priv/static/|./|' src/examples/image.gleam
-          gleam run -m lustre/dev build app --minify
-          mkdir -p dist
+          gleam run -m lustre/dev build --no-html --minify
           cp index.html dist/index.html
-          cp -r priv dist/priv
-          sed -i 's|priv/static/demo.mjs|paint/priv/static/demo.min.mjs|' dist/index.html
           cp ../media/logo.svg ./dist/logo.svg
           cp ../media/pixel_art_example.png ./dist/pixel_art_example.png
           cp -r ../demos/noughts_and_crosses/dist dist/noughts_and_crosses
