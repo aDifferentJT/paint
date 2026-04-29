@@ -44,6 +44,11 @@ pub const references: List(Reference) = [
     content: "import paint as p\n\npub fn stroke_example() -> p.Picture {\n  let yellow = p.colour_hex(\"#F0CA56\")\n\n  p.circle(30.0) |> p.stroke(yellow, width: 5.0)\n}",
   ),
   Reference(
+    path: ["src", "examples", "stroke_dashed.gleam"],
+    module_doc: " Note that you may also remove the default stroke\n using stroke_none.\n",
+    content: "import paint as p\n\npub fn stroke_dashed_example() -> p.Picture {\n  let yellow = p.colour_hex(\"#F0CA56\")\n\n  p.circle(30.0) |> p.stroke_dashed(yellow, width: 5.0, dashes: [5.0, 5.0])\n}",
+  ),
+  Reference(
     path: ["src", "examples", "square.gleam"],
     module_doc: "",
     content: "import paint as p\n\npub fn square_example() -> p.Picture {\n  p.square(40.0)\n}",

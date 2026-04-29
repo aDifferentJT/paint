@@ -67,9 +67,9 @@ fn board_number_placed(state: PlayingState) -> Int {
 }
 
 fn all_positions() -> List(Pos) {
-  list.range(from: 0, to: board_size - 1)
+  int.range(from: 0, to: board_size, with: [], run: list.prepend)
   |> list.flat_map(fn(x) {
-    list.range(from: 0, to: board_size - 1)
+    int.range(from: 0, to: board_size, with: [], run: list.prepend)
     |> list.map(fn(y) { Pos(x, y) })
   })
 }
@@ -250,7 +250,8 @@ fn check(state: State, just_played: Pos) -> State {
         |> option.unwrap(or: False)
       }
 
-      let range = list.range(0, board_size - 1)
+      let range =
+        int.range(from: 0, to: board_size, with: [], run: list.prepend)
 
       let current_row = fn() {
         range

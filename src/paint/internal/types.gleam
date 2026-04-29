@@ -34,7 +34,7 @@ pub type ImageScalingBehaviour {
 
 pub type StrokeProperties {
   NoStroke
-  SolidStroke(Colour, Float)
+  DashedStroke(Colour, width: Float, dashes: List(Float))
 }
 
 pub type FontProperties {
