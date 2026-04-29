@@ -5,6 +5,7 @@ pub type Picture {
   Blank
   Polygon(List(Vec2), closed: Bool)
   Arc(radius: Float, start: Angle, end: Angle)
+  Bezier(start: Vec2, cp1: Vec2, cp2: Vec2, end: Vec2)
   Text(text: String, style: FontProperties)
   ImageRef(Image, width_px: Int, height_px: Int)
   // Styling

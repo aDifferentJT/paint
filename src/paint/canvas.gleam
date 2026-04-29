@@ -12,8 +12,8 @@ import paint/encode
 import paint/event.{type Event}
 import paint/internal/impl_canvas
 import paint/internal/types.{
-  type Image, type Picture, Arc, Blank, Combine, Fill, FontProperties, Image,
-  NoStroke, Polygon, Radians, Rotate, Scale, SolidStroke, Stroke, Text,
+  type Image, type Picture, Arc, Bezier, Blank, Combine, Fill, FontProperties,
+  Image, NoStroke, Polygon, Radians, Rotate, Scale, SolidStroke, Stroke, Text,
   Translate,
 }
 
@@ -159,6 +159,22 @@ fn display_on_rendering_context(
         radius,
         start_radians,
         end_radians,
+        state.fill,
+        state.stroke,
+      )
+    }
+
+    Bezier(start, cp1, cp2, end) -> {
+      impl_canvas.bezier(
+        ctx,
+        start.0,
+        start.1,
+        cp1.0,
+        cp1.1,
+        cp2.0,
+        cp2.1,
+        end.0,
+        end.1,
         state.fill,
         state.stroke,
       )

@@ -49,6 +49,13 @@ fn decode_picture() -> Decoder(Picture) {
       use end <- decode.field("end", decode_angle())
       decode.success(types.Arc(radius, start:, end:))
     }
+    "bezier" -> {
+      use start <- decode.field("start", decode_vec2())
+      use cp1 <- decode.field("cp1", decode_vec2())
+      use cp2 <- decode.field("cp2", decode_vec2())
+      use end <- decode.field("end", decode_vec2())
+      decode.success(types.Bezier(start:, cp1:, cp2:, end:))
+    }
     "blank" -> decode.success(types.Blank)
     "combine" -> {
       use pictures <- decode.field(
@@ -155,6 +162,14 @@ fn picture_to_json(picture: Picture) -> Json {
         #("start", angle_to_json(start)),
         #("end", angle_to_json(end)),
       ])
+    types.Bezier(start:, cp1:, cp2:, end:) ->
+      json.object([
+        #("type", json.string("bezier")),
+        #("start", vec2_to_json(start)),
+        #("cp1", vec2_to_json(cp1)),
+        #("cp2", vec2_to_json(cp2)),
+        #("end", vec2_to_json(end)),
+      ])
     types.Blank -> json.object([#("type", json.string("blank"))])
     types.Combine(from) ->
       json.object([
@@ -170,13 +185,7 @@ fn picture_to_json(picture: Picture) -> Json {
     types.Polygon(points, closed:) ->
       json.object([
         #("type", json.string("polygon")),
-        #(
-          "points",
-          json.array(from: points, of: fn(point) {
-            let #(x, y) = point
-            json.object([#("x", json.float(x)), #("y", json.float(y))])
-          }),
-        ),
+        #("points", json.array(from: points, of: vec2_to_json)),
         #("closed", json.bool(closed)),
       ])
     types.Rotate(picture, angle) ->
@@ -257,4 +266,9 @@ fn stroke_to_json(stroke: StrokeProperties) -> Json {
 fn angle_to_json(angle: Angle) -> Json {
   let Radians(rad) = angle
   json.object([#("radians", json.float(rad))])
+}
+
+fn vec2_to_json(vec2: #(Float, Float)) -> Json {
+  let #(x, y) = vec2
+  json.object([#("x", json.float(x)), #("y", json.float(y))])
 }

@@ -79,6 +79,16 @@ pub fn arc(radius: Float, start: Angle, end: Angle) -> Picture {
   internal_implementation.Arc(radius, start: start, end: end)
 }
 
+/// An bezier curve
+pub fn bezier(
+  start: #(Float, Float),
+  cp1: #(Float, Float),
+  cp2: #(Float, Float),
+  end: #(Float, Float),
+) -> Picture {
+  internal_implementation.Bezier(start:, cp1:, cp2:, end:)
+}
+
 /// A polygon consisting of a list of 2d points
 pub fn polygon(points: List(#(Float, Float))) -> Picture {
   internal_implementation.Polygon(points, True)

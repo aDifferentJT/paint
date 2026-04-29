@@ -86,6 +86,21 @@ pub fn arc(
   stroke: Bool,
 ) -> Nil
 
+@external(javascript, "../../impl_canvas_bindings.mjs", "bezier")
+pub fn bezier(
+  ctx: RenderingContext2D,
+  startx: Float,
+  starty: Float,
+  cp1x: Float,
+  cp1y: Float,
+  cp2x: Float,
+  cp2y: Float,
+  endx: Float,
+  endy: Float,
+  fill: Bool,
+  stroke: Bool,
+) -> Nil
+
 @external(javascript, "../../impl_canvas_bindings.mjs", "polygon")
 pub fn polygon(
   ctx: RenderingContext2D,

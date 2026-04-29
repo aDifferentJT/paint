@@ -15,6 +15,7 @@ import paint/encode
 
 // Example pictures
 import examples/arc
+import examples/bezier
 import examples/blank
 import examples/circle
 import examples/combine
@@ -119,6 +120,7 @@ fn init(_flags) {
       ref_to_example(refs, "blank.gleam", blank.blank_example()),
       ref_to_example(refs, "circle.gleam", circle.circle_example()),
       ref_to_example(refs, "arc.gleam", arc.arc_example()),
+      ref_to_example(refs, "bezier.gleam", bezier.bezier_example()),
       ref_to_example(refs, "polygon.gleam", polygon.polygon_example()),
       ref_to_example(refs, "lines.gleam", lines.lines_example()),
       ref_to_example(refs, "rectangle.gleam", rectangle.rectangle_example()),

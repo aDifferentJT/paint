@@ -177,6 +177,18 @@ export function arc(ctx, radius, start, end, fill, stroke) {
   }
 }
 
+export function bezier(ctx, startx, starty, cp1x, cp1y, cp2x, cp2y, endx, endy, fill, stroke) {
+  ctx.beginPath();
+  ctx.moveTo(startx, starty);
+  ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endx, endy);
+  if (fill) {
+    ctx.fill();
+  }
+  if (stroke) {
+    ctx.stroke();
+  }
+}
+
 export function polygon(ctx, points, closed, fill, stroke) {
   ctx.beginPath();
   ctx.moveTo(0, 0);

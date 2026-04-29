@@ -26,6 +26,11 @@ pub fn arc_round_trip_test() {
     round_trip(p.arc(30.0, p.angle_deg(20.0), p.angle_rad(1.0)))
 }
 
+pub fn bezier_round_trip_test() {
+  let assert Ok(_) =
+    round_trip(p.bezier(#(1.0, 2.0), #(3.0, 4.0), #(5.0, 6.0), #(7.0, 8.0)))
+}
+
 pub fn text_round_trip_test() {
   let assert Ok(_) = round_trip(p.text("Hello world", px: 15))
 }
