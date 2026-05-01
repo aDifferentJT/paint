@@ -30,6 +30,8 @@ jobs:
           gleam deps download
           gleam run -m reference_this -- --allow-all-ext src/examples src/examples_code.gleam
           gleam run -m lustre/dev build --minify
+          sed -i 's|/demo.mjs|paint/demo.mjs|' dist/index.html
+          sed -i 's|/style.css|paint/style.css|' dist/index.html
           cp -r ../demos/noughts_and_crosses/dist dist/noughts_and_crosses
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
