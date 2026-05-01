@@ -21,3 +21,11 @@ stylesheets = [
 scripts = [
     { src = "./highlight.mjs", type = "module" }
 ]
+meta = [
+    { name="theme-color", content="#ABDAFC" }
+]
+links = [
+    { rel = "preconnect", href = "https://fonts.googleapis.com" },
+    { rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = "anonymous" },
+    { rel = "stylesheet", href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lexend:wght@100..900&display=swap" },
+]
