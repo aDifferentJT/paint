@@ -96,7 +96,16 @@ pub fn polygon(
 ) -> Nil
 
 @external(javascript, "../../impl_canvas_bindings.mjs", "text")
-pub fn text(ctx: RenderingContext2D, text: String, style: String) -> Nil
+pub fn text(ctx: RenderingContext2D, text: String, font: String) -> Nil
+
+@external(javascript, "../../impl_canvas_bindings.mjs", "set_text_align")
+pub fn set_text_align(ctx: RenderingContext2D, value: String) -> Nil
+
+@external(javascript, "../../impl_canvas_bindings.mjs", "set_text_baseline")
+pub fn set_text_baseline(ctx: RenderingContext2D, value: String) -> Nil
+
+@external(javascript, "../../impl_canvas_bindings.mjs", "set_direction")
+pub fn set_direction(ctx: RenderingContext2D, value: String) -> Nil
 
 pub type JsImage
 
